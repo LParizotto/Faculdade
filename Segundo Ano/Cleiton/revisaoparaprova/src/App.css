@@ -1,0 +1,117 @@
+/* 
+  Estilização principal do container do orçamento.
+  Define a largura máxima, centraliza, adiciona espaçamento interno e bordas arredondadas.
+*/
+.orcamento-container {
+  max-width: 700px;              /* Largura máxima da caixa para não ficar muito grande em telas grandes */
+  margin: 30px auto;             /* Centraliza horizontalmente com 'auto' e dá espaço superior/inferior de 30px */
+  background: #fff;              /* Fundo branco para contraste com o resto da página */
+  padding: 20px;                 /* Espaçamento interno em todos os lados */
+  border-radius: 12px;           /* Arredonda os cantos da caixa */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra leve para dar destaque visual */
+  font-family: Arial, sans-serif;/* Define a fonte padrão do conteúdo interno */
+  color: black;                  /* Cor padrão do texto dentro do container */
+}
+
+/* 
+  Centraliza o título da seção de orçamento.
+*/
+.titulo-orcamento{
+  text-align: center;            /* Centraliza horizontalmente o texto do título */
+  align-items: center;           /* Alinha verticalmente se usado com flex (aqui é apenas precaução) */
+}
+
+/* 
+  Container que agrupa os campos de preenchimento (descrição, quantidade, valor unitário e botão).
+*/
+.linha-preencher{
+  display: flex;                 /* Organiza os elementos em linha, lado a lado */
+  gap: 20px;                     /* Espaço horizontal entre os elementos */
+  margin-bottom: 15px;           /* Espaço inferior para separar da tabela */
+}
+
+/* 
+  Estiliza os inputs dentro da linha de preenchimento.
+*/
+.linha-preencher input{
+  flex: 1;                       /* Faz os inputs ocuparem tamanhos iguais */
+  padding: 8px;                  /* Espaçamento interno para melhorar a usabilidade */
+  border: 1px solid #ccc;        /* Borda cinza clara ao redor do campo */
+  border-radius: 10px;           /* Bordas arredondadas para aparência mais moderna */
+}
+
+/* 
+  Estilo do botão de adicionar item (+).
+*/
+.button-adicionar{
+  background: #2e7d32;           /* Verde escuro, cor associada a "adicionar" ou "confirmar" */
+  border-radius: 6px;            /* Bordas arredondadas */
+}
+
+/* 
+  Estilo da tabela que lista os itens.
+*/
+.tabela {
+  width: 100%;                   /* A tabela ocupa toda a largura do container */
+  border-top: 2px solid #ccc;    /* Linha superior destacando o início da tabela */
+}
+
+/* 
+  Cada linha de informação da tabela (incluindo cabeçalho e linhas de itens).
+*/
+.tabela-informacoes{
+  display: flex;                 /* Cada linha é um flex container, alinhando colunas lado a lado */
+  align-items: center;           /* Alinha verticalmente os itens no centro */
+  border-bottom: 1px solid #eee; /* Linha divisória inferior entre as linhas */
+  padding: 8px 0;                /* Espaçamento vertical interno */
+}
+
+/* 
+  Linha específica do cabeçalho da tabela.
+*/
+.tabela-cabecalho{
+  font-weight: bold;             /* Deixa os textos do cabeçalho em negrito */
+}
+
+/* 
+  Classe base para todas as colunas da tabela.
+*/
+.col {
+  padding: 4px 6px;              /* Pequeno espaçamento interno para dar "respiro" ao texto */
+}
+
+/* 
+  Distribuição de espaço entre colunas:
+  - A coluna de descrição é maior (flex:2), as outras têm flex:1.
+  - Algumas colunas centralizam seu conteúdo.
+*/
+.col.descricao{flex: 2;}                          /* Descrição ocupa mais espaço */
+.col.quantidade{flex: 1; text-align: center;}     /* Quantidade centralizada */
+.col.valoruni{flex: 1; text-align: center;}       /* Valor unitário centralizado */
+.col.total{flex: 1; text-align: center;}          /* Total centralizado */
+.col.acoes{flex: 1; text-align: center;}          /* Botão de ação (remover) centralizado */
+
+/* 
+  Estilo do botão de remover (X).
+*/
+.botao-remover {
+  background: #e53935;           /* Vermelho forte, indicando ação de exclusão */
+  border: none;                  /* Remove borda padrão */
+  color: #fff;                   /* Texto branco */
+  padding: 5px 8px;              /* Tamanho interno do botão */
+  border-radius: 6px;            /* Bordas arredondadas */
+  cursor: pointer;               /* Mostra o cursor de clique ao passar o mouse */
+  font-size: 14px;               /* Tamanho do texto do botão */
+}
+
+/* 
+  Área de exibição do total geral, localizada abaixo da tabela.
+*/
+.total-geral {
+  margin-top: 15px;             /* Espaço acima da seção de total */
+  background: #e8f5e9;          /* Verde bem claro, destacando suavemente */
+  padding: 10px;               /* Espaçamento interno */
+  text-align: right;           /* Alinha o texto à direita */
+  font-weight: bold;           /* Destaque no valor total */
+  border-radius: 6px;          /* Bordas arredondadas para manter o padrão visual */
+}
